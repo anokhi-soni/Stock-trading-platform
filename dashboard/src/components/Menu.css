@@ -1,0 +1,177 @@
+/* Menu css */
+.menu-container{
+    position: relative;
+}
+.userDropDownPanel{
+    background: #ebe5e5;
+    position: absolute;
+    border: 1px solid black;
+    right: 20px;
+    top: 80px;
+}
+
+.menu-container {
+  flex-basis: 68%;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 30px;
+  height: 20px;
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.menus span{
+  display: inline-block;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.menu {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgb(70, 70, 70);
+}
+.menu.selected {
+  color: rgb(245, 104, 52);
+}
+.menu:hover {
+  color: rgb(245, 104, 52);
+}
+
+/* User drop down panel */
+
+.userDropDownPanel{
+    position: absolute;
+    top: 75px;
+    right: 20px;
+
+    width: 290px;
+    background: #fff;
+
+    border: 1px solid #ececec;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* Every section */
+
+.userDropDownPanel > div{
+    padding: 16px 20px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.userDropDownPanel > div:last-child{
+    border-bottom: none;
+}
+
+/* ================= USER INFO ================= */
+
+.userDropDownPanel > div:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.userDropDownPanel > div:first-child span:first-child{
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.userDropDownPanel > div:first-child span:last-child{
+    font-size: 13px;
+    color: #888;
+}
+
+/* ================= SETTINGS ================= */
+
+.userDropDownPanel > div:nth-child(2){
+    cursor: pointer;
+    transition: .2s;
+}
+
+.userDropDownPanel > div:nth-child(2):hover{
+    background: #fafafa;
+}
+
+.userDropDownPanel > div:nth-child(2) span{
+    color: #387ed1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ================= LISTS ================= */
+
+.userDropDownPanel ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.userDropDownPanel li{
+    padding: 10px 0;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.userDropDownPanel li:hover{
+    color: #387ed1;
+    padding-left: 8px;
+}
+
+/* Logout */
+
+.userDropDownPanel li:last-child{
+    color: #d9534f;
+    font-weight: 500;
+}
+
+.userDropDownPanel li:last-child:hover{
+    color: #c9302c;
+}
+
+/* Small animation */
+
+.userDropDownPanel{
+    animation: dropdownFade .18s ease;
+}
+
+@keyframes dropdownFade{
+
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+
+@media (max-width: 874px) {
+    .menu-container{
+        display: none;
+
+    }
+}
+

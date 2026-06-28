@@ -1,0 +1,229 @@
+.menu-collapse-container{
+    display: none;
+}
+.menuBarDashboard{
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+}
+
+.hiddenPanel{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
+
+    background: #fff;
+    box-shadow: 4px 0 20px rgba(0,0,0,.12);
+
+    z-index: 9999;
+
+    overflow-y: auto;
+    animation: slideIn .25s ease;
+}
+
+/* Close button */
+
+.hiddenPanel .fa-xmark{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    font-size: 24px;
+    color: #777;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.hiddenPanel .fa-xmark:hover{
+    color:#387ed1;
+    transform: rotate(90deg);
+}
+
+/* Logo */
+
+.hiddenPanel .logo{
+    width: 50px;
+    display:block;
+    margin: 30px 30px 20px 10px;
+}
+
+/* Main container */
+
+.actionBtns{
+    padding:0 20px 25px;
+}
+
+/* =====================
+   USER INFO
+===================== */
+
+.actionBtns > div:first-child{
+    display:flex;
+    flex-direction:column;
+
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+}
+
+.actionBtns > div:first-child p:first-child{
+    margin:0;
+    font-size:18px;
+    font-weight:600;
+    color:#222;
+}
+
+.actionBtns > div:first-child p:last-child{
+    margin-top:6px;
+    font-size:13px;
+    color:#888;
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+
+.verticalMenus{
+    margin-top:15px;
+}
+
+.verticalMenus ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.verticalMenus li{
+    margin:0;
+}
+
+.verticalMenus a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.verticalMenus p{
+    margin:0;
+    padding:14px 14px;
+    border-radius:6px;
+
+    color:#444;
+    font-size:15px;
+    font-weight:500;
+
+    transition:.2s;
+}
+
+.verticalMenus p:hover{
+    background:#f5f9ff;
+    color:#387ed1;
+}
+
+/* Selected menu */
+
+.selected{
+    background:#edf5ff;
+    color:#387ed1 !important;
+    font-weight:600;
+}
+
+/* =====================
+   DIVIDERS
+===================== */
+
+.hiddenPanel hr{
+    margin:18px 0;
+    border:none;
+    border-top:1px solid #eee;
+}
+
+/* =====================
+   OTHER OPTIONS
+===================== */
+
+.actionBtns > div:nth-child(3){
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.actionBtns > div:nth-child(3) p{
+    margin:0;
+    color:#387ed1;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.actionBtns > div:nth-child(4) ul,
+.actionBtns > div:nth-child(5) ul{
+    list-style:none;
+    margin:0;
+    padding:12px 0;
+}
+
+.actionBtns > div:nth-child(4) li,
+.actionBtns > div:nth-child(5) li{
+
+    padding:12px 4px;
+
+    color:#555;
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.actionBtns > div:nth-child(4) li:hover,
+.actionBtns > div:nth-child(5) li:hover{
+
+    color:#387ed1;
+    padding-left:10px;
+}
+
+/* Logout */
+
+.actionBtns > div:nth-child(5) li:last-child{
+    color:#e53935;
+    font-weight:600;
+}
+
+.actionBtns > div:nth-child(5) li:last-child:hover{
+    color:#c62828;
+}
+
+/* Scrollbar */
+
+.hiddenPanel::-webkit-scrollbar{
+    width:6px;
+}
+
+.hiddenPanel::-webkit-scrollbar-thumb{
+    background:#d6d6d6;
+    border-radius:10px;
+}
+
+/* Slide animation */
+
+@keyframes slideIn{
+
+    from{
+        transform:translateX(-100%);
+        opacity:.4;
+    }
+
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+
+@media (max-width: 874px) {
+    .menu-collapse-container{
+        display: flex;
+        align-items: center;
+    }
+}

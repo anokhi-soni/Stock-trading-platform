@@ -1,0 +1,123 @@
+
+/* Buy Window */
+.SellBuyWindow{
+  position: fixed;
+  height: 25rem;
+  width: 25rem;
+  top: 40%;
+  left: 35%;
+  background-color: rgb(228, 234, 234);
+  
+}
+
+
+/* Main Form */
+.newOrderForm{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+    background-color: rgb(228, 234, 234);
+}
+
+
+.info-container{
+    padding: 18px 22px;
+    border-bottom: 1px solid #e8e8e8;
+    /* background: #fafafa; */
+}
+
+#stockName{
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+#priceOfStock{
+    margin-top: 6px;
+    font-size: 14px;
+    color: #777;
+}
+
+.textFieldContainer{
+    padding: 25px 22px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.newOrderForm > p{
+    padding: 0 22px;
+    font-size: 15px;
+    color: #444;
+    margin-top: 8px;
+}
+
+.BuySellCancelbuttonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-top: 1px solid #e8e8e8;
+    background-color: rgb(228, 234, 234);
+}
+
+.buyBtn{
+    background: #387ed1;
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.buyBtn:hover{
+    background: #2f6eb6;
+}
+
+/* Sell btn */
+.sellBtn{
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.sellBtn:hover{
+    background: #f14e1c;
+}
+
+.cancelBtn{
+    background: transparent;
+    border: 1px solid #d6d6d6;
+    color: #555;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cancelBtn:hover{
+    background: #f5f5f5;
+}
+
+.totalPricePara{
+  margin-bottom: 0px;
+}
+
+.warningDiv{
+  position: relative;
+  bottom: 0;
+  margin: auto;
+}
+/* Menu.js & MenuCollapsed.js */
+
+.summaryPara{
+  margin-bottom: 0px;
+}

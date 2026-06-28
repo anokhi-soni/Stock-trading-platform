@@ -1,0 +1,82 @@
+#navBar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: white;
+    width: 95vw;
+    /* border-bottom: 1px solid rgb(227, 225, 225); */
+    box-shadow: 0px 0.6px 5px rgb(214, 213, 213);
+}
+
+#navBarContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 30px 25px 50px;
+}
+
+#navBtnContainer{
+    display: flex ;
+    justify-content: space-around;
+    width: 60%;
+    margin-left: auto;
+}
+.menuEle{
+    /* margin-left: 30px;
+    margin-right: 30px; */
+}
+
+#popUp{
+    display: none;
+    /* z-index: 2;
+    height: 70vh;
+    width: 70vh;
+    
+    top: 0; */
+    position: fixed;
+    inset: 0; /*Shorthand for top, bottom, left, right offset*/
+    background: rgb(255, 255, 255);
+    /* display: none; */
+    /* display: flex; */
+    /* align-items: center; Makes the element's content vertically in center */
+    /* justify-content: center; Makes the element's content horizontally in center */
+    z-index: 3;
+    padding: 20px;
+    justify-content: space-between;
+    height: 70vh;
+    width: 90vw;
+    box-shadow: 4px 4px 10px black;
+    border-radius: 5px;
+} 
+#cross{
+    display: flex;
+    justify-content: end;
+}
+
+#section1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(227, 225, 225);
+}
+/* .element1Child{
+    margin: 2rem 4rem 2rem 4rem ;
+} */
+@media (min-width : 800px){
+    #toggelBtn{
+        display: none;
+    } 
+}
+
+
+@media (max-width : 800px){
+    #toggelBtn{
+        display: block;
+        margin-left: auto;
+    }
+    .menuEle{
+        display: none;
+    }
+    
+}

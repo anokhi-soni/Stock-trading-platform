@@ -1,0 +1,120 @@
+/* Hero css */
+body{
+    font-family: "Inter", sans-serif;
+}
+#ProductHero{
+    line-height: 40px;
+    padding-bottom: 70px;
+    margin-top: 70px;
+}
+#ProductHero h3{
+    font-weight: 550;
+    /* opacity: 0.9; */
+    /* color: #2f2f2f; */
+}
+.para1{
+    font-size: 21px;
+    font-weight: 400;
+    opacity: 0.8;
+    /* color: rgb(114, 114, 114); */
+}
+.para2{
+    font-size: 16px;
+}
+
+.para2 a{
+    text-decoration: none;
+    opacity: 0.9;
+    color: rgb(9, 102, 139);
+}
+
+/* TextAndImage css */
+.TextAndImageContainer{
+    width: 100vw;
+}
+
+/* ImageLeft css*/
+.imageAndContent{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+.LeftimageAndContent{
+    padding: 40px 70px 40px 100px;
+}
+
+.imageAndContent .LimageContainer{
+    margin-left: 15px;
+}
+.imageAndContent .contentContainer{
+    width: 20rem;
+    margin-right: 15px;
+    font-size: 16.5px;
+    /* line-height: 32px; */
+    /* letter-spacing: 0.8px; */
+}
+.contentContainer h4{
+    margin-bottom: 25px;
+    /* font-weight: 450; */
+    color: black;
+    opacity: 1;
+}
+.contentContainer .linksContainer{
+    font-size: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    /* justify-content: space-between; */
+}
+.linksContainer div{
+    margin-right: 30px;
+}
+.linksContainer a{
+    text-decoration: none;
+}
+
+/* ImageRight css */
+.RightimageAndContent{
+    padding: 40px 100px 40px 70px;
+}
+
+.imageAndContent .RimageContainer{
+    /* margin-right: 15px; */
+}
+.imageAndContent .RcontentContainer{
+    width: 20rem;
+    margin-left: 15px;
+    font-size: 16.5px;
+    /* line-height: 32px; */
+    /* letter-spacing: 0.8px; */
+}
+
+/* Universe */
+#Universe{
+    margin-top: 70px;
+}
+#Universe h4{
+    opacity: 1;
+}
+#partnerPlatforms{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 150px 40px 150px;
+}
+.platform{
+    width: 15rem;
+    margin: 2rem 1.9rem 2rem 1.9rem;
+}
+.platform img{
+    height: 3.5rem;
+    width: 12rem;
+    margin-bottom: 20px;
+}
+.platform p{
+    font-size: 12px;
+    opacity: 0.8;
+}

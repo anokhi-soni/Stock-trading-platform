@@ -1,0 +1,120 @@
+/* AboutPage css */
+body{
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+}
+#AboutPageContainer{
+    width: 100vw;    
+}
+
+/* Hero css */
+h4{
+    opacity: 0.8;
+}
+/* Info css */
+#infoContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#infoContainer div {
+    width:  27rem;
+    margin: 40px;
+    /* padding: 70px; */
+    color: rgb(63, 61, 61);
+     -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+}
+
+#infoContainer a{
+    text-decoration:none; 
+}
+
+/* Team css */
+h3{
+    text-align: center;
+    opacity: 0.8;
+}
+
+#nitinKamathContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+
+#nitinKamath{
+    width: 300px;
+    margin: 40px;
+    text-align: center;
+}
+#nitinKamath img{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.name{
+    font-size: 18px;
+}
+.post{
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+#aboutNitin{
+    width: 33rem;
+    margin: 40px;
+    color: rgb(63, 61, 61);
+    /* line-height: 32px; */
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+}
+#aboutNitin a{
+    text-decoration: none;
+}
+
+#otherMembers{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-bottom: 100px;
+}
+
+/* MembersComponent css */
+.memberContainer{
+    height: 300px;
+    width: 300px;
+    margin: 30px;
+    text-align: center;
+    margin: 40px 40px 60px 40px;
+}
+.memberContainer img{
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+}
+.memberName{
+    font-size: 18px;
+    margin: 20px 0px 5px 0px;
+}
+.memberPost{
+    font-size: 15px;
+    opacity: 0.8;
+    margin: 0px 0px 5px 0px;
+}
+.memberBio{
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.memberBio i{
+    font-size: 12px;
+}

@@ -1,0 +1,18 @@
+body{
+    font-family: "Inter", sans-serif;
+}
+
+.hompageHero img{
+    height:400px;
+    width:800px;
+}
+
+@media (max-width: 280px) {
+    .hompageHero{
+        padding: 0;
+    }
+    .hompageHero img{
+        height:120px;
+        width:280px;
+    }
+}

@@ -1,0 +1,126 @@
+/* Hero css */
+#PricingHero{
+    text-align: center;
+    margin: 60px 0px 40px 0px;
+    padding: 0px;
+}
+.charges{
+    font-size: 28px;
+    font-weight: 530;
+    margin-bottom: 5px;
+}
+.sentence{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(137, 137, 137);
+}
+
+/* Brokrage css */
+#Brokrage{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+/* BrokrageSubcomponent */
+.brokrageComponent{
+    width: 20rem;
+    text-align: center;
+    margin: 0px 15px 0px 15px;
+}
+.brokrageComponent img{
+    height: 12rem;
+    width: 15rem;
+    margin-bottom: 0px;
+}
+.brokrageComponent .head{
+    font-size:26px;
+    font-weight: 550;
+    margin-bottom: 20px;
+}
+.brokrageComponent .info{
+    color: rgb(133, 133, 133);
+    line-height: 31px;
+}
+
+@media (max-width: 824px){
+    #Brokrage{
+        display: block;
+        /* margin: 0px 0px 70px 0px; */
+        text-align: center;
+    }
+    .brokrageComponent{
+        width: 100%;
+        text-align: center;
+        margin: 0px 15px 0px 15px;
+    }
+
+    .brokrageComponent img{
+        height: 8rem;
+        width: 12rem;
+        margin-bottom: 0px;
+    }
+}
+
+/* EquityCurrencCommodity css */
+#EquityCurrencyCommodity{
+    padding: 40px 70px 40px 70px;
+}
+
+#EquityCurrencyCommodity .toggelBtnContainer{
+    display: flex;
+}
+.toggelBtnContainer{
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+.toggelBtnContainer .ecc_btn{
+    padding: 20px 40px 20px 40px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: rgb(0, 132, 255);
+    
+}
+.ecc_btn:hover{
+    cursor: pointer;
+}
+#btn1{
+    color: grey;
+    border-bottom: 2px solid rgb(0, 132, 255);
+}
+
+#EquityCurrencyCommodity #div1{
+    display: block;
+}
+
+#EquityCurrencyCommodity #div2{
+    display: none;
+}
+#EquityCurrencyCommodity #div3{
+    display: none;
+}
+
+/* TableComponent css */
+.TableComponent{
+    border-collapse: collapse; /* so that while giving the cells a bottom border, there's no space between borders of different cells */
+    border-spacing: 20px 10px;
+    border: 1px solid rgb(199, 199, 199);
+    width: 100%;
+}
+.TableComponent th, .TableComponent td{
+    padding: 20px 10px;
+}
+.headerRow th{
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.TableComponent .normalRow:nth-of-type(2n+1){
+    background-color: rgb(249, 248, 248);
+}
+.TableComponent .normalRow{
+    font-size: 14px;
+    color: gray;
+}
+.TableComponent .normalRow:first-child{
+    font-size: 14.4px;
+}
