@@ -43,6 +43,8 @@ function Login() {
         
        try {
             console.log(process.env.REACT_APP_BACKEND_URL);
+            console.log(process.env.REACT_APP_DASHBOARD_URL);
+            console.log(process.env);
             const responseData = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
                 username: username,
                 password: password
