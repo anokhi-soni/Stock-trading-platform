@@ -20,12 +20,12 @@ const Menu = ({user}) => {
 
   async function handleUserLogOut(){
     try {
-      const responseLogOut = await axios.get("http://localhost:3002/logout", {withCredentials:true})
+      const responseLogOut = await axios.get(`${process.env.REACT_BACKEND_URL}/logout`, {withCredentials:true})
   
       const {success, message} = responseLogOut.data;
       if(success){
       
-        window.location.href = "http://localhost:3001/";
+        window.location.href = `${process.env.REACT_FRONTEND_URL}/`;
         console.log("After navigation")
         setLogout(true);
       } else {

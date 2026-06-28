@@ -3,6 +3,7 @@ import axios from "axios"
 import { Link, useNavigate} from "react-router-dom";
 import "./Login.css"
 import { ToastContainer, toast } from "react-toastify";
+
 function Login() {
     const navigate = useNavigate();
     const[username, setUsername] = useState("");
@@ -41,7 +42,7 @@ function Login() {
         }
         
        try {
-            const responseData = await axios.post("http://localhost:3002/login", {
+            const responseData = await axios.post(`${process.env.REACT_BACKEND_URL}/login`, {
                 username: username,
                 password: password
             }, {withCredentials:true});
@@ -50,7 +51,7 @@ function Login() {
             
             if(success) {
                 console.log(message);
-                window.location.href = "http://localhost:3000/?msg=authorised"; // Dashboard
+                window.location.href = `${process.env.REACT_DASHBOARD_URL}/?msg=authorised`; // Dashboard
             } else {
                 console.log(message);
                 navigate("/login"); // yaani wapas /login (navigate() follows relative path)

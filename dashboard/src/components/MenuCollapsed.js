@@ -25,7 +25,7 @@ function MenuCollapsed({user}) {
 
     function handleUserLogOut(){
         try {
-        axios.get("http://localhost:3002/logout", {withCredentials:true})
+        axios.get(`${process.env.REACT_BACKEND_URL}/logout`, {withCredentials:true})
         .then((res)=>{
             try {
                 
@@ -36,7 +36,7 @@ function MenuCollapsed({user}) {
             
                 if(success){
                 
-                window.location.href = "http://localhost:3001/";
+                window.location.href = `${process.env.REACT_FRONTEND_URL}/`;
                 console.log("After navigation")
                 setLogout(true);
                 } else {

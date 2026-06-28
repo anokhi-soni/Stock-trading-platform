@@ -31,7 +31,7 @@ const WatchList = () => {
 
           USMarket.map(async (stockName, idx)=>{
             try {
-              const result = await axios.get(`http://localhost:3002/quote/${stockName}`, {withCredentials:true})
+              const result = await axios.get(`${process.env.REACT_BACKEND_URL}/quote/${stockName}`, {withCredentials:true})
       
               return {
                 name: stockName,

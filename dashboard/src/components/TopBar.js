@@ -10,7 +10,7 @@ const TopBar = () => {
   useEffect(()=>{
       const getUser = async ()=>{
         try {
-          const responseData = await axios.get("http://localhost:3002/", {withCredentials:true});
+          const responseData = await axios.get(`${process.env.REACT_BACKEND_URL}/`, {withCredentials:true});
           const {message, success, user} = responseData.data;
           console.log(message, user)
           if(success){

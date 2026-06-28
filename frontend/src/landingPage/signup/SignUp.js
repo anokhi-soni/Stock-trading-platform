@@ -42,7 +42,7 @@ function SignUp() {
         
 
         try {
-            const responseData = await axios.post("http://localhost:3002/signup", {
+            const responseData = await axios.post(`${process.env.REACT_BACKEND_URL}/signup`, {
                 username: username,
                 email: email,
                 password: password
@@ -52,7 +52,7 @@ function SignUp() {
             
             if(success) {
                 console.log(message);
-                window.location.href = "http://localhost:3000/?msg=newUser"; // Dashboard
+                window.location.href = `${process.env.REACT_DASHBOARD_URL}/?msg=newUser`; // Dashboard
     
             } else {
                 console.log(message);

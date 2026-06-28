@@ -10,7 +10,7 @@ const Summary = ({currUser}) => {
   useEffect(()=>{
     const getUserData = async ()=>{
       try {
-        const responseBalance = await axios.get("http://localhost:3002/balance", {withCredentials:true});
+        const responseBalance = await axios.get(`${process.env.REACT_BACKEND_URL}/balance`, {withCredentials:true});
         const {message, success, balance} = responseBalance.data;
         console.log(responseBalance.data);
         if(success){
@@ -19,7 +19,7 @@ const Summary = ({currUser}) => {
 
         } else console.log(message);
 
-        const responseAllHoldings = await axios.get("http://localhost:3002/allHoldings", {withCredentials:true});
+        const responseAllHoldings = await axios.get(`${process.env.REACT_BACKEND_URL}/allHoldings`, {withCredentials:true});
         const {totalHoldings, currValue, pnl} = responseAllHoldings.data;
         const pnlPercent =  (pnl/(100000-userBalance))*100 
         const profitClass = pnl > 0 ? "profit" : "loss"
