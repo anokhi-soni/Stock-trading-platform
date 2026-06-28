@@ -25,6 +25,7 @@ const Dashboard = () => {
 
   
   const handleSuccess = (msg) => toast.success(msg, { position: "bottom-right",});
+  const handleError = (msg) => toast.error(msg, { position: "bottom-right",});
 
   useEffect(()=>{
     const getUserVerified = async ()=>{
@@ -38,7 +39,7 @@ const Dashboard = () => {
             setLoading(false);
           }
         } catch (error) {
-          console.error(error)
+          handleError(error.msg);
         }
     }
     getUserVerified()
