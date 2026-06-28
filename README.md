@@ -23,9 +23,9 @@ A feature-rich stock trading platform where users can securely manage their port
 
 | Application | Link |
 |------------|------|
-| 🏠 Frontend | **ADD YOUR FRONTEND LINK HERE** |
-| 📊 Dashboard | **ADD YOUR DASHBOARD LINK HERE** |
-| ⚙️ Backend API | **ADD YOUR BACKEND LINK HERE** |
+| 🏠 Frontend | **https://stock-trading-frontend-0nq6.onrender.com** |
+| 📊 Dashboard | **https://stock-trading-frontend-0nq6.onrender.com** |
+| ⚙️ Backend API | **https://stock-trading-frontend-0nq6.onrender.com** |
 
 ---
 
