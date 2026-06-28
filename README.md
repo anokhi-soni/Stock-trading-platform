@@ -33,60 +33,42 @@ A feature-rich stock trading platform where users can securely manage their port
 
 > 📹 **Add a GIF or short video demonstrating the project here.**
 
-Suggested Flow:
-
-- Home Page
-- User Registration
-- Login
-- Dashboard
-- Buy Stock
-- Sell Stock
-- Updated Holdings
-- Portfolio Summary
-
----
 
 # 📸 Screenshots
 
 ## 🏠 Home Page
 
-> **ADD SCREENSHOT HERE**
+> ![Home Page](./screenshots/HomePage.png)
 
 ---
 
 ## 🔐 Login Page
 
-> **ADD SCREENSHOT HERE**
+> ![Home Page](./screenshots/Login.png)
 
 ---
 
 ## 📊 Dashboard
 
-> **ADD SCREENSHOT HERE**
+> ![Home Page](./screenshots/Dashboard.png)
 
 ---
 
 ## 💼 Holdings
 
-> **ADD SCREENSHOT HERE**
-
----
-
-## 📈 Positions
-
-> **ADD SCREENSHOT HERE**
+> ![Home Page](./screenshots/Holding.png)
 
 ---
 
 ## 💹 Buy Stock
 
-> **ADD SCREENSHOT HERE**
+> ![Home Page](./screenshots/buyStock.png)
 
 ---
 
 ## 💰 Sell Stock
 
-> **ADD SCREENSHOT HERE**
+> ![Home Page](./screenshots/sellStock.png)
 
 ---
 
@@ -218,13 +200,13 @@ Zerodha-Clone
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+git clone https://github.com/anokhi-soni/Stock-trading-platform.git
 ```
 
 Move into the project directory
 
 ```bash
-cd YOUR_REPOSITORY_NAME
+cd Zerodha
 ```
 
 Install frontend dependencies
@@ -255,7 +237,7 @@ npm install
 Start Backend
 
 ```bash
-npm start
+nodemon index.js
 ```
 
 Start Frontend
@@ -346,7 +328,7 @@ If you have suggestions or improvements, feel free to fork the repository and su
 
 # 👨‍💻 Developer
 
-**Aman**
+**Anokhi Soni**
 
 Full Stack MERN Developer
 
