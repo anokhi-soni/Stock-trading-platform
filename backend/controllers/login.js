@@ -14,7 +14,7 @@ module.exports.Login = async (req, res)=>{
         if(!isAuthor) return res.json({msg: `Password is invalid`});
 
         const token = createToken(user._id);
-        res.cookie("token", token, {httpOnly: true });
+        res.cookie("token", token, {httpOnly: true, secure: true, sameSite: "None" });
 
         res
         .status(201)

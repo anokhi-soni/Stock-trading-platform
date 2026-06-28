@@ -22,7 +22,9 @@ module.exports.signUp = async(req, res)=>{
         const token = await createToken(user._id);
         
         res.cookie("token", token, {
-            httpOnly: true // This prevents JavaScript running in the browser from reading the cookie, making it much harder for an attacker to steal the JWT through an XSS attack
+            httpOnly: true, // This prevents JavaScript running in the browser from reading the cookie, making it much harder for an attacker to steal the JWT through an XSS attack
+            secure: true,
+            sameSite: "None"
         })
         
         res
