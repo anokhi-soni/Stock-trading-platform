@@ -68,7 +68,7 @@ app.get("/allHoldings", verifyUser, async (req, res)=>{
     )
 
     const currValue = apiAddedData.reduce((sum, h) => sum + h.currValue, 0);
-    console.log(currValue);
+    
     const totalInvestement = 100000-req.currUser.balance;
     res.json({allHoldings: apiAddedData, totalHoldings: apiAddedData.length, currValue: currValue, pnl: currValue - totalInvestement, totalInvestement}); // This will return holdings in json format 
 })
@@ -180,7 +180,7 @@ app.patch("/sellShares/:symbol", verifyUser, async (req, res)=>{
 
 app.get("/balance", verifyUser, async (req, res)=>{
     const user = await User.findOne({username: req.currUser.username});
-    console.log(user);
+    
     return res.json({message: "Successful!", success: true, balance: user.balance});
 })
 

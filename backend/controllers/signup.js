@@ -4,11 +4,11 @@ const {createToken} = require("../util/secretToken");
 module.exports.signUp = async(req, res)=>{
     try {
         const {username, email, password} = req.body;
-        console.log(username, " ", email, " ", password, " ")
+        
         const alreadyExists = await User.findOne({username: username})
         
         if(alreadyExists) {
-            console.log(alreadyExists);
+            
             return res.json({message: "This username is unavailable", success:false});
         }
         const user = new User({
@@ -16,9 +16,9 @@ module.exports.signUp = async(req, res)=>{
             email: email,
             password: password
         })
-        console.log(user);
+        
         await user.save()
-        // console.log(user._id);
+       
         const token = await createToken(user._id);
         
         res.cookie("token", token, {
