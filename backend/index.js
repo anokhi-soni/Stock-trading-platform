@@ -38,49 +38,80 @@ const { Finnhub, getQuote } = require("./controllers/finnhub");
 app.use("/", AuthenticationRouter)
 
 app.get("/", verifyUser, (req, res)=>{
-    const currUser = req.currUser
-    res.json({message: "Logged in successfully!", success:true, user:currUser});
+    try {
+        const currUser = req.currUser
+        res.json({message: "Logged in successfully!", success:true, user:currUser});
+    } catch (error) {
+        return res.json({
+            message:"Internal server error",
+            success:false
+        });
+    }
 })
 app.get("/allHoldings", verifyUser, async (req, res)=>{
-    const user = req.currUser;
-    const allHoldings = await HoldingModel.find({user:user});
-    
-    // let currValue=0;
-    
-    const apiAddedData = await Promise.all(
-        allHoldings.map(async (holding)=>{
 
-            const quoteData = await getQuote(holding.name);
-            const ltp = quoteData.c * 94.38; // USD to INR
-            
-            // currValue += holding.qty * ltp;
-            
-            return{
-                ...holding.toObject(), // cuz holding is a Mongoose document so spreading it will give all the fields of the mongoose documents which we don't want
-                ltp,
-                dayChange: quoteData.d * 94.38,
-                dayChangePercent: quoteData.dp,
-                currValue: holding.qty * ltp,
-                pnl: (ltp - holding.avg) * holding.qty
-            }
+    try {
+        const user = req.currUser;
+        const allHoldings = await HoldingModel.find({user:user});
+        
+        // let currValue=0;
+        
+        const apiAddedData = await Promise.all(
+            allHoldings.map(async (holding)=>{
 
-        })
-    )
+                const quoteData = await getQuote(holding.name);
+                const ltp = quoteData.c * 94.38; // USD to INR
+                
+                // currValue += holding.qty * ltp;
+                
+                return{
+                    ...holding.toObject(), // cuz holding is a Mongoose document so spreading it will give all the fields of the mongoose documents which we don't want
+                    ltp,
+                    dayChange: quoteData.d * 94.38,
+                    dayChangePercent: quoteData.dp,
+                    currValue: holding.qty * ltp,
+                    pnl: (ltp - holding.avg) * holding.qty
+                }
 
-    const currValue = apiAddedData.reduce((sum, h) => sum + h.currValue, 0);
+            })
+        )
+
+        const currValue = apiAddedData.reduce((sum, h) => sum + h.currValue, 0);
+        
+        const totalInvestement = 100000-req.currUser.balance;
+        res.json({allHoldings: apiAddedData, totalHoldings: apiAddedData.length, currValue: currValue, pnl: currValue - totalInvestement, totalInvestement}); // This will return holdings in json format 
+    } catch (error) {
+        return res.json({
+            message:"Internal server error",
+            success:false
+        });
+    }
     
-    const totalInvestement = 100000-req.currUser.balance;
-    res.json({allHoldings: apiAddedData, totalHoldings: apiAddedData.length, currValue: currValue, pnl: currValue - totalInvestement, totalInvestement}); // This will return holdings in json format 
 })
 app.get("/allPositions", verifyUser, async(req, res) =>{
-    const user = req.currUser;
-    const allPositions = await PositionModel.find({user:user}); 
-    res.json(allPositions); // This will return positions in json format 
+    try {
+        const user = req.currUser;
+        const allPositions = await PositionModel.find({user:user}); 
+        return res.json(allPositions); // This will return positions in json format 
+    } catch (error) {
+        return res.json({
+            message:"Internal server error",
+            success:false
+        });
+    }
 })
 app.get("/allOrders", verifyUser, async (req, res)=>{
-    const user = req.currUser;
-    const allOrders = await OrderModel.find({user:user});
-    res.json(allOrders);
+    try {
+        const user = req.currUser;
+        const allOrders = await OrderModel.find({user:user});
+        return res.json(allOrders);
+    } catch (error) {
+        return res.json({
+            message:"Internal server error",
+            success:false
+        });
+    }
+    
 })
 app.post("/newOrder", verifyUser, async (req, res)=>{
     const qty = Number(req.body.qty);
@@ -132,7 +163,7 @@ app.post("/newOrder", verifyUser, async (req, res)=>{
         }
 
     } catch (error) {
-        res.status(500).json({message: "something went wrong", success: false})
+        return res.status(500).json({message: "something went wrong", success: false})
     }
     
     
@@ -179,9 +210,16 @@ app.patch("/sellShares/:symbol", verifyUser, async (req, res)=>{
 })
 
 app.get("/balance", verifyUser, async (req, res)=>{
-    const user = await User.findOne({username: req.currUser.username});
+    try {
+        const user = await User.findOne({username: req.currUser.username});
+        return res.json({message: "Successful!", success: true, balance: user.balance});
+    } catch (error) {
+        return res.json({
+            message:"Internal server error",
+            success:false
+        });
+    }
     
-    return res.json({message: "Successful!", success: true, balance: user.balance});
 })
 
 
@@ -189,7 +227,6 @@ app.get("/quote/:symbol", verifyUser, Finnhub);
 
 app.get("/demodata", async(req, res)=>{
     res.send("Data Added!");
-
 })
 
 app.listen(PORT, ()=>{

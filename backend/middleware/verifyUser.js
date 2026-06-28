@@ -13,7 +13,7 @@ module.exports.verifyUser = async (req, res, next)=>{
         }
         else {
             const user = await User.findById(data.id);
-            if(!user) res.json({message: "access token invalid... Please Login again", status: false}); 
+            if(!user)  return res.json({message: "access token invalid... Please Login again", status: false}); 
             // res.json({msg: "Access provided successfully!", user: user, status: true});
             req.currUser = user;
             next();

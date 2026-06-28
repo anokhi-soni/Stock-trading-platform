@@ -5,5 +5,5 @@ module.exports.Logout= async (req, res)=> {
         secure: true,
         sameSite: "None"
     });
-    res.json({message: "Logged ou successfully", success: true});
+    return res.json({message: "Logged ou successfully", success: true});
 }

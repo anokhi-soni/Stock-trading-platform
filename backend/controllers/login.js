@@ -6,21 +6,25 @@ module.exports.Login = async (req, res)=>{
         const {username, password} = req.body;
         const user = await User.findOne({username});
         if(!user) {
-            res.json({msg: `User ${username} not found`});
+            return res.json({message: `User ${username} not found`, success: false});
         }
         const hashedPassword = user.password;
         const isAuthor = await Bycrypt.compare(password, hashedPassword);
 
-        if(!isAuthor) return res.json({msg: `Password is invalid`});
+        if(!isAuthor) return res.json({message: `Password is invalid`, success: false});
 
         const token = createToken(user._id);
         res.cookie("token", token, {httpOnly: true, secure: true, sameSite: "None" });
 
-        res
+        return res
         .status(201)
         .json({message: "Logged in Successfully!", success:true});
     } catch (error) {
         console.error(error);
+        return res.json({
+            message:"Internal server error",
+            success:false
+        });
     }
 
 } 

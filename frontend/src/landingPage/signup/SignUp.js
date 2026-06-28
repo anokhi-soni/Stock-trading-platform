@@ -54,18 +54,19 @@ function SignUp() {
                 console.log(message);
                 window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}/?msg=newUser`; // Dashboard
     
+                setUsername("");
+                setEmail("");
+                setPassword("");
             } else {
+                handleError(message);
                 console.log(message);
             }
-                
        } catch (error) {
-            console.error(error);
+            handleError("Something went wrong....")
        }
         
 
-        setUsername("");
-        setEmail("");
-        setPassword("");
+        
     }
     return ( 
         <div className="signup-container">
@@ -74,7 +75,7 @@ function SignUp() {
 
             <input required placeholder="Username" value={username} type="text" id="username" onChange={handleOnChange_user}/>
             <br/><br/>
-            <input required placeholder="E-mail"  value={email} type="text" id="email" onChange={handleOnChange_email}/>
+            <input required placeholder="E-mail"  value={email} type="email" id="email" onChange={handleOnChange_email}/>
             <br/><br/>
             <input required placeholder="Password"  value={password} type="password" id="password" onChange={handleOnChange_password}/>
             <br/><br/>

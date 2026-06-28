@@ -53,17 +53,18 @@ function Login() {
             if(success) {
                 console.log(message);
                 window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}/?msg=authorised`; // Dashboard
+                setUsername("");
+                setPassword("");
             } else {
+                // navigate("/login"); // yaani wapas /login (navigate() follows relative path)
+                handleError(message);
                 console.log(message);
-                navigate("/login"); // yaani wapas /login (navigate() follows relative path)
             }
                 
        } catch (error) {
-            console.error(error);
+            handleError("Something went wrong...")
        }        
 
-        setUsername("");
-        setPassword("");
     }
     return ( 
         <div className="login-container">

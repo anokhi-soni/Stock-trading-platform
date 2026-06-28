@@ -27,11 +27,15 @@ module.exports.signUp = async(req, res)=>{
             sameSite: "None"
         })
         
-        res
+        return res
         .status(201)
         .json({message: "Registered Successfully!", success:true})
 
     } catch (error) {
         console.error(error);
+         return res.json({
+            message:"Internal server error",
+            success:false
+        });
     }
 }
