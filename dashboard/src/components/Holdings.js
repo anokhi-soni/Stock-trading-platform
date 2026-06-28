@@ -11,7 +11,7 @@ const Holdings = () => {
 
   const [holdingsInfo, setHoldingsInfo] = useState({});
   useEffect(()=>{
-      axios.get(`${process.env.REACT_BACKEND_URL}/allHoldings`, {withCredentials:true})
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/allHoldings`, {withCredentials:true})
       .then((res)=>{
         console.log(res.data);
         const pnlPercent =  (res.data.pnl/(res.data.totalInvestement))*100

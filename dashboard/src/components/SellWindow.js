@@ -21,7 +21,7 @@ function SellWindow({stock, stock_id}) {
         }
         
         try {
-            const response = await axios.patch(`${process.env.REACT_BACKEND_URL}/sellShares/${stock.name}`, {
+            const response = await axios.patch(`${process.env.REACT_APP_BACKEND_URL}/sellShares/${stock.name}`, {
                 name: stock.name,
                 price: stock.price,
                 qty: quantity,

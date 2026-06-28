@@ -25,7 +25,7 @@ function MenuCollapsed({user}) {
 
     function handleUserLogOut(){
         try {
-        axios.get(`${process.env.REACT_BACKEND_URL}/logout`, {withCredentials:true})
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/logout`, {withCredentials:true})
         .then((res)=>{
             try {
                 
@@ -36,7 +36,7 @@ function MenuCollapsed({user}) {
             
                 if(success){
                 
-                window.location.href = `${process.env.REACT_FRONTEND_URL}/`;
+                window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/`;
                 console.log("After navigation")
                 setLogout(true);
                 } else {

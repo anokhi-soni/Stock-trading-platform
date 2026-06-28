@@ -9,7 +9,7 @@ let cookieParser = require("cookie-parser");
 let app = Express();
 
 app.use(cors({  // security mechanism that controls whether a webpage can make requests to a different origin.
-    origin: ["http://localhost:3000", "http://localhost:3001", "http://anyOtherLink"], // Only these cross-origin links can make request to our server
+    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL], // Only these cross-origin links can make request to our server
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // Only these requests are allowed from cross-origins
     credentials: true, // This server allows the browser to send and receive credentials (such as cookies, HTTP authentication, or TLS client certificates) in cross-origin requests.
   }));

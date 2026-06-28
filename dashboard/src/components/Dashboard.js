@@ -29,10 +29,10 @@ const Dashboard = () => {
   useEffect(()=>{
     const getUserVerified = async ()=>{
         try {
-          const response = await axios.get(`${process.env.REACT_BACKEND_URL}/`, {withCredentials:true})
+          const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/`, {withCredentials:true})
           const {success, message, user} = response.data;
           if(!success){
-            window.location.href = `${process.env.REACT_FRONTEND_URL}/login/?error=unauthorized` // if token found to be invalid, redirect to /login page and pass a query error=unauthorized so that on the login page, we can extract this string and if it's equal to unauthorised, we'll pop us a toastify msg            
+            window.location.href = `${process.env.REACT_APP_FRONTEND_URL}/login/?error=unauthorized` // if token found to be invalid, redirect to /login page and pass a query error=unauthorized so that on the login page, we can extract this string and if it's equal to unauthorised, we'll pop us a toastify msg            
           } else{
             setUser(user);
             setLoading(false);

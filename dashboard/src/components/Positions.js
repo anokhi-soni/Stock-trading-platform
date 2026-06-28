@@ -5,7 +5,7 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(()=>{
-    axios.get(`${process.env.REACT_BACKEND_URL}/allPositions`, {withCredentials: true})
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allPositions`, {withCredentials: true})
     .then((res)=> setAllPositions(res.data))
     .catch((err)=> console.log(err));
   }, [])

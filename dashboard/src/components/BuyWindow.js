@@ -18,7 +18,7 @@ function BuyWindow({stock, stockId}) {
             setProblem("Please enter at least quantity...");
             return;
         }
-        const response = await axios.post(`${process.env.REACT_FRONTEND_URL}/newOrder`, {
+        const response = await axios.post(`${process.env.REACT_APP_FRONTEND_URL}/newOrder`, {
             name: stock.name,
             price: stock.price,
             qty: quantity,

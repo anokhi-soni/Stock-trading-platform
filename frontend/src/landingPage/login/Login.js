@@ -42,7 +42,7 @@ function Login() {
         }
         
        try {
-            const responseData = await axios.post(`${process.env.REACT_BACKEND_URL}/login`, {
+            const responseData = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
                 username: username,
                 password: password
             }, {withCredentials:true});
@@ -51,7 +51,7 @@ function Login() {
             
             if(success) {
                 console.log(message);
-                window.location.href = `${process.env.REACT_DASHBOARD_URL}/?msg=authorised`; // Dashboard
+                window.location.href = `${process.env.REACT_APP_DASHBOARD_URL}/?msg=authorised`; // Dashboard
             } else {
                 console.log(message);
                 navigate("/login"); // yaani wapas /login (navigate() follows relative path)
