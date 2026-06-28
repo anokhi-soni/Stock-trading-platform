@@ -31,7 +31,7 @@ A feature-rich stock trading platform where users can securely manage their port
 
 # 🎥 Project Demo
 
-> 📹 **Add a GIF or short video demonstrating the project here.**
+> 
 
 
 # 📸 Screenshots
@@ -72,6 +72,11 @@ A feature-rich stock trading platform where users can securely manage their port
 
 ---
 
+## 📊 Charts
+
+> ![Home Page](./screenshots/Chart.png)
+
+---
 # 📖 About the Project
 
 This project is a full-stack clone of the **Zerodha trading platform**, built using the **MERN Stack**.
