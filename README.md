@@ -29,11 +29,6 @@ A feature-rich stock trading platform where users can securely manage their port
 
 ---
 
-# 🎥 Project Demo
-
-> 
-
-
 # 📸 Screenshots
 
 ## 🏠 Home Page
