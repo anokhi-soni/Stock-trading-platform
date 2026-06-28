@@ -294,6 +294,8 @@ Developing this project helped me strengthen my understanding of:
 - REST API Design
 - JWT Authentication
 - MongoDB Data Modeling
+- Live Stock Market API Integration
+- Real-Time Stock Prices
 - Portfolio & Profit/Loss Calculations
 - React State Management
 - Backend Architecture
@@ -305,8 +307,6 @@ Developing this project helped me strengthen my understanding of:
 
 # 🚀 Future Enhancements
 
-- Live Stock Market API Integration
-- Real-Time Stock Prices
 - Search Stocks
 - Watchlist Management
 - Transaction History
