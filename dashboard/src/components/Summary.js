@@ -20,11 +20,11 @@ const Summary = ({currUser}) => {
         } else console.log(message);
 
         const responseAllHoldings = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/allHoldings`, {withCredentials:true});
-        const {totalHoldings, currValue, pnl} = responseAllHoldings.data;
-        const pnlPercent =  (pnl/(100000-userBalance))*100 
+        const {totalHoldings, currValue, pnl, openingBalance} = responseAllHoldings.data;
+        const pnlPercent =  (pnl/(openingBalance-userBalance))*100 
         const profitClass = pnl > 0 ? "profit" : "loss"
         console.log(profitClass);
-        setHoldingInfo({totalHoldings, currValue, pnl, pnlPercent, profitClass: profitClass})
+        setHoldingInfo({totalHoldings, currValue, pnl, pnlPercent, openingBalance, profitClass: profitClass})
         console.log(responseAllHoldings.data);
 
       } catch (error) {
@@ -94,7 +94,7 @@ const Summary = ({currUser}) => {
               Current Value <span>{(holdingsInfo.currValue/1000)?.toFixed(2)}k</span>{" "}
             </p>
              <p className="summaryPara">
-              Investment <span>{((100000-userBalance)/1000)?.toFixed(2)}k</span>{" "}
+              Investment <span>{((holdingsInfo.openingBalance-userBalance)/1000)?.toFixed(2)}k</span>{" "}
             </p>
           </div>
         </div>

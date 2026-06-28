@@ -22,6 +22,10 @@ const userSchema = new Mongoose.Schema({
     balance:{
         type: Number,
         default: 500000
+    },
+    openingBalance:{
+        type: Number,
+        default: 500000
     }
 })
 

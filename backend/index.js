@@ -78,8 +78,8 @@ app.get("/allHoldings", verifyUser, async (req, res)=>{
 
         const currValue = apiAddedData.reduce((sum, h) => sum + h.currValue, 0);
         
-        const totalInvestement = 100000-req.currUser.balance;
-        res.json({allHoldings: apiAddedData, totalHoldings: apiAddedData.length, currValue: currValue, pnl: currValue - totalInvestement, totalInvestement}); // This will return holdings in json format 
+        const totalInvestement = req.currUser.openingBalance-req.currUser.balance;
+        res.json({allHoldings: apiAddedData, totalHoldings: apiAddedData.length, currValue: currValue, pnl: currValue - totalInvestement, totalInvestement, openingBalance: req.currUser.openingBalance}); // This will return holdings in json format 
     } catch (error) {
         return res.json({
             message:"Internal server error",
