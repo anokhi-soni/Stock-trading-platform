@@ -63,7 +63,7 @@ const Menu = ({user}) => {
         (userDrop)? 
         <div className="userDropDownPanel">
           <div>
-              <span>{user?.username?.[0] || userName}</span>
+              <span>{user?.username || userName}</span>
               <span>{user?.email || email}</span>
           </div>
           <div>
