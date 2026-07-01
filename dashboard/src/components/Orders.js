@@ -10,6 +10,7 @@ const Orders = () => {
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`, {withCredentials: true})
     .then((res)=>{
       setAllOrders(res.data);
+      setLoading(false);
     })
     .catch((err)=> console.log(err));
   }, [])
