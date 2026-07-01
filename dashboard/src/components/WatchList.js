@@ -165,10 +165,10 @@ function WatchListAction({id, stock}){
           <button className="sell" onClick={()=>{buyFunctions.openSellWindow(id, stock)}}>S</button>
         </Tooltip>
       </span>
-      <span><Tooltip  title="Sell (S)" TransitionComponent={Grow}><button className="actionBtn"><ListIcon /></button></Tooltip></span>
-      <span><Tooltip  title="Sell (S)" TransitionComponent={Grow}><button className="actionBtn"><BarChartIcon /></button></Tooltip></span>
-      <span><Tooltip  title="Sell (S)" TransitionComponent={Grow}><button className="actionBtn"><DeleteIcon /></button></Tooltip></span>
-      <span><Tooltip  title="Sell (S)" TransitionComponent={Grow}><button className="actionBtn"><MoreHorizIcon /></button></Tooltip></span>
+      <span><Tooltip  title="Market Depth" TransitionComponent={Grow}><button className="actionBtn"><ListIcon /></button></Tooltip></span>
+      <span><Tooltip  title="Charts" TransitionComponent={Grow}><button className="actionBtn"><BarChartIcon /></button></Tooltip></span>
+      <span><Tooltip  title="Delete" TransitionComponent={Grow}><button className="actionBtn"><DeleteIcon /></button></Tooltip></span>
+      <span><Tooltip  title="More Options" TransitionComponent={Grow}><button className="actionBtn"><MoreHorizIcon /></button></Tooltip></span>
     </span>
   )
 }
