@@ -83,7 +83,7 @@ const Summary = ({currUser}) => {
         <div className="data">
           <div className="first">
             <h3 className={holdingsInfo.profitClass}>
-              {(holdingsInfo.pnl/100)?.toFixed(2)}k <small className={holdingsInfo.profitClass}>{holdingsInfo.pnlPercent > 0 ? (+holdingsInfo.pnlPercent?.toFixed(2) ) : (-holdingsInfo.pnlPercent?.toFixed(2))}%</small>{" "}
+              {(holdingsInfo.pnl/1000)?.toFixed(2)}k <small className={holdingsInfo.profitClass}>{holdingsInfo.pnlPercent > 0 ? (+holdingsInfo.pnlPercent?.toFixed(2) ) : (-holdingsInfo.pnlPercent?.toFixed(2))}%</small>{" "}
             </h3>
              <p className="summaryPara">P&L</p>
           </div>

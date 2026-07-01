@@ -9,7 +9,7 @@ function OpenAccount({heading, statement, buttonContent, link}) {
             <div className="row">
                 <p>{statement}</p>
             </div>
-            <Link className="btn btn-primary btn-lg px-5" to={`${link}`} role="button">{buttonContent}</Link>
+            <Link id="signUpBtn" className="btn btn-primary btn-lg px-5" to={`${link}`} role="button">{buttonContent}</Link>
         </div>    
     );
 }

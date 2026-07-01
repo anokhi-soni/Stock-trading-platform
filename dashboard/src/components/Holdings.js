@@ -102,7 +102,7 @@ const Holdings = () => {
         </div>
 
         <div className="col">
-          <h5 className={holdingsInfo?.profitClass}>{(holdingsInfo?.pnl/100)?.toFixed(2)}k {holdingsInfo?.pnlPercent > 0 ? (+holdingsInfo?.pnlPercent?.toFixed(2) ) : (-holdingsInfo?.pnlPercent?.toFixed(2))}%</h5>
+          <h5 className={holdingsInfo?.profitClass}>{(holdingsInfo?.pnl/1000)?.toFixed(2)}k {holdingsInfo?.pnlPercent > 0 ? (+holdingsInfo?.pnlPercent?.toFixed(2) ) : (-holdingsInfo?.pnlPercent?.toFixed(2))}%</h5>
           <p>P&L</p>
         </div>
       </div>
