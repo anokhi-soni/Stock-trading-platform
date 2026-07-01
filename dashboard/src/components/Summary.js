@@ -26,14 +26,13 @@ const Summary = ({currUser}) => {
         console.log(profitClass);
         setHoldingInfo({totalHoldings, currValue, pnl, pnlPercent, openingBalance, profitClass: profitClass})
         console.log(responseAllHoldings.data);
-
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
     }
 
     getUserData();
-    setLoading(false);
   }, [])
 
 

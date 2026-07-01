@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import Loading from "../Loader/Loading";
 const Orders = () => {
+  const [loading, setLoading] = useState(true);
   const [allOrders, setAllOrders] = useState([]);
   
   useEffect(()=>{
@@ -12,6 +13,10 @@ const Orders = () => {
     })
     .catch((err)=> console.log(err));
   }, [])
+  
+  if(loading){
+    return(<Loading text={"Loading.."}/>)
+  }
 
   return (
       (allOrders.length) ?
