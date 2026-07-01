@@ -68,7 +68,7 @@ const Summary = ({currUser}) => {
               Margins used <span>0</span>{" "}
             </p>
              <p className="summaryPara">
-              Opening balance <span>100k</span>{" "}
+              Opening balance <span>{(holdingsInfo.openingBalance/1000).toFixed(2)}K</span>{" "}
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ const Summary = ({currUser}) => {
 
           <div className="second">
              <p className="summaryPara">
-              Current Value <span>{(holdingsInfo.currValue/1000)?.toFixed(2)}k</span>{" "}
+              Current Value <span className={holdingsInfo?.profitClass}>{(holdingsInfo.currValue/1000)?.toFixed(2)}k</span>{" "}
             </p>
              <p className="summaryPara">
               Investment <span>{((holdingsInfo.openingBalance-userBalance)/1000)?.toFixed(2)}k</span>{" "}

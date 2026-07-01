@@ -95,7 +95,7 @@ const Holdings = () => {
         </div>
         <div className="col">
 
-          <h5>
+          <h5 className={holdingsInfo?.profitClass}>
             {(holdingsInfo.currValue/1000)?.toFixed(2)}k.<span></span>{" "}
           </h5>
           <p>Current value</p>
